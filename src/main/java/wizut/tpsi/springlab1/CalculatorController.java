@@ -60,22 +60,20 @@ public class CalculatorController {
         if(dane.getX() == null) dane.setX(0);
         if(dane.getY() == null) dane.setY(0);
         if(nazwa != null){
-            
-      
-        switch(nazwa){
-            case "dodawanie":
-                dane.setZ(dane.getX() + dane.getY());
-                dane.setZnak("+");
-                break;
-            case "odejmowanie":
-                dane.setZ(dane.getX() - dane.getY());
-                dane.setZnak("-");
-                break;
-            case "mnozenie":
-                dane.setZ(dane.getX() * dane.getY());
-                dane.setZnak("*");
-                break;
-        }
+            switch(nazwa){
+                case "dodawanie":
+                    dane.setZ(dane.getX() + dane.getY());
+                    dane.setZnak("+");
+                    break;
+                case "odejmowanie":
+                    dane.setZ(dane.getX() - dane.getY());
+                    dane.setZnak("-");
+                    break;
+                case "mnozenie":
+                    dane.setZ(dane.getX() * dane.getY());
+                    dane.setZnak("*");
+                    break;
+            }
         }
         model.addAttribute("znak",dane.getZnak());
         model.addAttribute("x", dane.getX());
