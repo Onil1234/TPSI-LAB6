@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class CalculatorController {
     
-    @RequestMapping("/")
+    //@RequestMapping("/")
     //public String home(Model model, Integer  x, Integer y, String nazwa) {
         
 // <editor-fold desc="Zadanie 1">
@@ -55,10 +55,13 @@ public class CalculatorController {
         
     
 // <editor-fold  desc="Zadanie 3">
+    @RequestMapping("/")
     public String home(Model model, String nazwa, CalculatorForm dane) {
         if(dane.getX() == null) dane.setX(0);
         if(dane.getY() == null) dane.setY(0);
-        
+        if(nazwa != null){
+            
+      
         switch(nazwa){
             case "dodawanie":
                 dane.setZ(dane.getX() + dane.getY());
@@ -73,7 +76,7 @@ public class CalculatorController {
                 dane.setZnak("*");
                 break;
         }
-        
+        }
         model.addAttribute("znak",dane.getZnak());
         model.addAttribute("x", dane.getX());
         model.addAttribute("y", dane.getY());
