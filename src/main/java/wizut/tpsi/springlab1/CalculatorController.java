@@ -59,6 +59,8 @@ public class CalculatorController {
     public String home(Model model, String nazwa, CalculatorForm dane) {
         if(dane.getX() == null) dane.setX(0);
         if(dane.getY() == null) dane.setY(0);
+        if(dane.getZ() == null) dane.setZ(0);
+        if(dane.getZnak() == null) dane.setZnak("+");
         if(nazwa != null){
             switch(nazwa){
                 case "dodawanie":
